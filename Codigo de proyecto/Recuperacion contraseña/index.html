@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <!-- Sección para ingresar el correo -->
+    <div class="container" id="emailSection">
+        <h2>Recuperar Cuenta</h2>
+        <form id="emailForm">
+            <label for="email">Ingresa tu correo:</label>
+            <input type="email" id="email" required placeholder="correo@ejemplo.com" aria-label="Correo electrónico">
+            <span class="error-message" id="emailError"></span>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <!-- Mensaje de recuperación -->
+    <div class="container" id="recoverySection" style="display: none;">
+        <h2>Mensaje</h2>
+        <p>Enviamos un enlace a tu correo para recuperar tu cuenta.</p>
+    </div>
+
+    <!-- Sección para cambiar la contraseña -->
+    <div class="container" id="resetSection" style="display: none;">
+        <h2>Cambio de Contraseña</h2>
+        <form id="resetForm">
+            
+            <label for="newPassword">Nueva Contraseña:</label>
+            <div class="password-container">
+                <input type="password" id="newPassword" required placeholder="Nueva Contraseña" autocomplete="new-password">
+                <button type="button" class="toggle-password" onclick="togglePassword('newPassword')">
+                    <span>👁</span>
+                </button>
+            </div>
+            <span class="error-message" id="passwordError"></span>
+
+            <label for="confirmPassword">Confirmar Contraseña:</label>
+            <div class="password-container">
+                <input type="password" id="confirmPassword" required placeholder="Confirmar Contraseña" autocomplete="new-password">
+                <button type="button" class="toggle-password" onclick="togglePassword('confirmPassword')">
+                    <span>👁</span>
+                </button>
+            </div>
+            <span class="error-message" id="confirmPasswordError"></span>
+
+            <button type="submit">Actualizar</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
