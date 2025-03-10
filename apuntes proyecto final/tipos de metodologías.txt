@@ -1,0 +1,10 @@
+tipos de metodologías
+tradicional y ágil 
+
+información primaria instrumentos entrevistas 
+secundaria información de la empresa 
+
+agiles scrump xp trabaja con los requerimientos con un proceso pequeño levantan actas para aceptar el proyecto se hacen prototipos y se aprueban 
+analista de desarrollo  es el mediador entre el cliente y el desarrollador
+  
+revisar metodologías agiles roles del analista scrum 

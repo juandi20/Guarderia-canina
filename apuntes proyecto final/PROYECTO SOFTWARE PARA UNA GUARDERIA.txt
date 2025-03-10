@@ -1,0 +1,9 @@
+PROYECTO SOFTWARE PARA UNA GUARDERIA CANINA
+1.reserva: calendario donde se visualice la reservas, cancelaciones y modificaciones. Recordatorios
+2. Perfil: información de cada can nombre raza edad vacunas alergias medicaciones
+3informacion del amo
+4.registro de actividades paseo, alimentación juegos
+
+buscar proyectos acerca de la guardería sean en Colombia o en el extranjero
+
+PRIMERA ENTREGA IEEE-830 Formato estándar para los requerimientos de software 

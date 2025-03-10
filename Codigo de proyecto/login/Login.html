@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Cliente y Administrador</title>
+    <link rel="stylesheet" href="style-login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Inicio de Sesión</h2>
+        <div class="role-selection">
+            <label><input type="radio" name="role" value="cliente" required> Cliente</label>
+            <label><input type="radio" name="role" value="admin" required> Administrador</label>
+        </div>
+        <form>
+            <div class="input-group">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" placeholder="N° Documento" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" placeholder="*************" required>
+            </div>
+            <button type="submit" class="submit-btn">Iniciar Sesión</button>
+        </form>
+        <!-- Colocamos los enlaces dentro del div correctamente -->
+        <div class="link-container">
+            <a href="">¿Olvidaste tu contraseña?</a><br>
+            <a href="registro.html">Crear cuenta</a>
+        </div>
+    </div>
+</body>
+</html>
