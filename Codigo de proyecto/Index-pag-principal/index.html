@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paraíso Canino</title>
     <link rel="stylesheet" href="style-index.css">
+    <link rel="icon" type="image/x-icon" href="img/icono.ico">
 </head>
 <body>
 
     <!-- Encabezado con logo y botones -->
-    <header class="header">
+    <header class="header" id="inicio">
         <img src="img/logo-inicio.png" alt="Paraíso Canino" class="logo">
         <div class="buttons">
             <button class="btn-login">Iniciar Sesión</button>
@@ -20,21 +21,26 @@
     <!-- Barra de navegación -->
     <nav class="navbar">
         <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#planes">Servicios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
 
     <!-- Sección del eslogan con imagen de fondo -->
     <section class="seccion-bienvenida">
-        <h1>¡Bienvenido a Paraíso Canino!</h1>
-        <p>Un segundo hogar para tu mejor amigo 🐾</p>
+        <div class="overlay">
+            <img src="img/fondo-inicio.jpg" alt="">
+        </div>
+        <div class="texto-bienvenida">
+            <h1>¡Bienvenido a Paraíso Canino!</h1>
+            <p>Un segundo hogar para tu mejor amigo 🐾</p>
+        </div>
     </section>
 
     <!--Seccion Nosotros-->
-    <section class="seccion-info">
+    <section class="seccion-info" id="nosotros">
         <div class="titulo-info">
             <h1>Paraiso Canino: Un Hogar Seguro y Divertido para tu Mascota</h1>
             <p>Conoce un poco de lo que te podemos ofrecer en paraiso canino.</p>
@@ -86,56 +92,71 @@
             </div>
         </div>
     </section>
-    <section class="contenedor-planes">
-        <div>
+    <section class="contenedor-planes" id="planes">
+        <div class="plane-1">
             <h1>Nuestras Tarifas</h1>
             <h3>Tarifa de 0-5 kg</h3>
             <p>"Chiquitos pero consentidos, un paraíso a su medida.<img src="img/huellitas.png" alt="">"</p>
             <div class="cont-imagenes">
                 <img src="img/tarifa1.png" alt="">
                 <img src="img/tarifa1.1.png" alt="">
+                <div class="boton-reserva">
+                    <button>Reserva ya!</button>
+                </div> 
             </div>
         </div>
-        <div>
+        <div class="plan-2">
             <h3>Tarifa de 5-15 kg</h3>
             <p>"Diversión y confort para los aventureros de tamaño mediano.<img src="img/huellitas.png" alt="">"</p>
             <div class="cont-imagenes">
                 <img src="img/tarifa2.png" alt="">
                 <img src="img/tarifa2.2.png" alt="">
+                <div class="boton-reserva">
+                    <button>Reserva ya!</button>
+                </div>
             </div>
         </div>
-        <div>
+        <div class="plan-3">
             <h3>Tarifa de 15-25 kg</h3>
             <p>"Espacio, juegos y cuidado para peludos llenos de energía.<img src="img/huellitas.png" alt="">"</p>
             <div class="cont-imagenes">
                 <img src="img/tarifa3.png" alt="">
                 <img src="img/tarifa3.3.png" alt="">
+                <div class="boton-reserva">
+                    <button>Reserva ya!</button>
+                </div>
             </div>
         </div>
-        <div>
+        <div class="plan-4">
             <h3>Tarifa de 25-35 kg</h3>
             <p>"Para los grandotes de corazón noble, un paraíso sin límites.<img src="img/huellitas.png" alt="">"</p>
             <div class="cont-imagenes">
                 <img src="img/tarifa4.png" alt="">
                 <img src="img/tarifa4.4.png" alt="">
+                <div class="boton-reserva">
+                    <button>Reserva ya!</button>
+                </div>
             </div>
         </div>
-        <div>
+        <div class="plan-5">
             <h3>Tarifa más de 35 kg</h3>
             <p>"Los gigantes también tienen su lugar especial en nuestro paraíso. <img src="img/huellitas.png" alt="">"</p>
             <div class="cont-imagenes">
                 <img src="img/tarifa5.png" alt="">
                 <img src="img/tarifa5.5.png" alt="">
+                <div class="boton-reserva">
+                    <button>Reserva ya!</button>
+                </div>
             </div>
         </div>
     </section>
     <!-- Sección de Contacto -->
-    <section class="contacto">
+    <section class="contacto" id="contacto">
         <div class="contenedor-izq">
             <img src="img/logo-inicio.png" alt="" class="logo-paraiso">
             <div class="info-izq">
                 <h2>Contactanos</h2>
-                <p><strong>Direccion:</strong>Calle 8 #4b:10 Pereira,Risalda</p>
+                <p><strong>Direccion:</strong>Calle 8 #4b:10 Pereira,Risaralda</p>
                 <p><strong>Teléfono:</strong>323 433 3333</p>
             </div>
             <div class="redes-sociales">
@@ -143,7 +164,6 @@
                 <div class="iconos">
                     <a href="#" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
                     <a href="#" target="_blank"><img src="img/whatsapp.png" alt="WhatsApp"></a>
-                    <a href="#" target="_blank"><img src="img/facebook.png" alt="Facebook"></a>
                 </div>
             </div>
         </div>

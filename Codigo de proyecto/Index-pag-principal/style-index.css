@@ -4,6 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: Arial, sans-serif;
@@ -99,21 +102,47 @@ body {
 /* Seccion de eslogan */
 
 .seccion-bienvenida {
+    position: relative;
     width: 100%;
-    height: 440px;
+    height: 500px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    background-color: #B4EBE6;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
 }
 
-.seccion-bienvenida h1 {
-    font-size: 35px;
+.seccion-bienvenida img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: brightness(60%);
 }
 
-.seccion-bienvenida p {
-    font-size: 20px;
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    z-index: 0;
 }
+
+.texto-bienvenida {
+    position: relative;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    max-width: 80%;
+}
+
 
 /* Seccion de informacion de lo que manejamos*/
 
@@ -193,9 +222,16 @@ body {
     background-color: rgb(128, 203, 196);
 }
 
+.plan-2 , .plan-3, .plan-4, .plan-5 {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+
+
 .contenedor-planes div {
     width: 100%;
-    height: 635px;
+    height: auto;
 }
 
 .contenedor-planes h1 {
@@ -226,11 +262,31 @@ body {
     margin-right: 30px;
 }
 
+.boton-reserva {
+    padding-top: 20px;
+}
+
+.boton-reserva button {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 6px;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.boton-reserva button:hover {
+    background-color: black;
+    color: white;
+}
+
 /*Seccion de contacto */
 
 .contacto {
     width: 100%;
-    height: auto;
+    height: 300px;
     display: flex;
     flex-direction: row;
 }
@@ -241,8 +297,8 @@ body {
 }
 
 .logo-paraiso {
-    width: 200px;
-    padding-top: 50px;
+    width: 120px;
+    padding-top: 20px;
 }
 
 .info-izq {
@@ -253,16 +309,15 @@ body {
 }
 
 .info-izq h2 {
-    font-size: 35px;
+    font-size: 25px;
 }
 
 .info-izq p {
     padding-top: 15px;
-    font-size: 25px;
+    font-size: 17px;
 }
 
 .redes-sociales {
-    padding-top: 40px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -270,19 +325,19 @@ body {
 }
 
 .redes-sociales p {
-    font-size: 25px;
-    padding-top: 50px;
+    font-size: 20px;
+    padding-top: 10px;
 }
 
 .iconos {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    padding-top: 15px;
+    padding-top: 10px;
 }
 
 .iconos img {
-    width: 40px;
+    width: 30px;
 }
 
 .contenedor-der {
@@ -292,7 +347,7 @@ body {
 
 .contenedor-der iframe {
     width: 100%;
-    height: 600px;
+    height: 300px;
 }
 
 
