@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESERVA</title>
+</head>
+<body>
+ <!-- Contenedor principal -->
+  <div class="contenedor_principal">
+    <form id="reservaForm">
+        <h1>RESERVA</h1>
+        <div>
+            <label for="fecha_inicio">Fecha entrada: </label>
+            <input type="date" name="fecha_inicio" required>
+        </div>
+        <div>
+            <label for="fecha_salida">Fecha salida: </label>
+            <input type="date" name="fecha_salida" required>
+        </div>
+        <div>
+            <label for="tipo_plan">Tipo de plan</label>
+            <select name="tipo_plan" id="tipo_plan">
+                <option value="0-5">0kg - 5kg</option>
+                <option value="5-10">5kg - 10kg</option>
+                <option value="10-15">10kg - 15kg</option>
+                <option value="15-20">15kg - 20kg</option>
+                <option value="20-25">20kg - 25kg</option>
+                <option value="25_mas">25kg o más</option>
+            </select>
+        </div>
+
+        <div>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre Mascota" required>
+        </div>
+
+        <div>
+            <input type="text" id="raza" name="raza" placeholder="Raza" required>
+        </div>
+
+        <div>
+            <input type="text" id="edad" name="edad" placeholder="Edad" required>
+        </div>
+        <div>
+            <label for="genero">Genero:</label>
+            <select name="genero" id="genero">
+                <option value="macho">Macho</option>
+                <option value="hembra">Hembra</option>
+            </select>
+        </div>
+        <div>
+            <label for="esterilizado">Esterilizado</label>
+            <input type="radio" id="esterilizado_si" name="esterilizado" value="si" required> Sí
+            <input type="radio" id="esterilizado_no" name="esterilizado" value="no"> No 
+        </div>
+
+        <div>
+            <label for="reactivo">Reactivo</label>
+            <input type="radio" id="reactivo_si" name="reactivo" value="si" required> Sí
+            <input type="radio" id="reactivo_no" name="reactivo" value="no"> No
+        </div>
+
+        <div>
+            <label for="vacunas">Vacunas</label>
+            <input type="radio" id="vacunas_si" name="reactivo" value="si"required> Si
+            <input type="radio" id="vacunas_no" name="vacunas" value="no"> No 
+        </div>
+        
+        <div>
+            <label for="alergias">Alergias</label>
+            <input type="radio" id="alergias_si" name="alergias" value="si" required> Sí
+            <input type="radio" id="alergias_no" name="alergias" value="no"> No
+            <input type="text" id="tipo_alergia" name="tipo_alergia" placeholder="Cuales alergias?" >
+        </div>
+
+        <div>
+            <label for="medicamento">Medicamento</label>
+            <input type="radio" id="mediamento_si" name="medicamento" value="si" required> Sí
+            <input type="radio" id="medicamento_no" name="medicamento" value="no"> No
+            <input type="text" id="tipo_medicamento" name="tipo_medicamento" placeholder="Cuales medicamentos/cuantas dosis?" >
+        </div>
+
+        <div>
+            <label for="alimentacion">alimentacion</label>
+            <input type="text" id="tipo_aliemento" name="tipo_alimento" placeholder="Tipo de alimento" required>
+            <input type="number" id="veces_alimento" name="veces_alimento" placeholder="Veces que lo alimenta" required>
+        </div>
+
+
+        <button type="submit">Registrar reserva</button>
+    </form>
+  </div>
+
+    
+</body>
+</html>

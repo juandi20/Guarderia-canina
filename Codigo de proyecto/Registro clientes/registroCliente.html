@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRO CLIENTE</title>
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="contenedor">
+        <form id="clienteForm">
+            <h1>REGISTRO CLIENTE</h1>
+            
+            <div>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+            </div>
+
+            <div>
+                <input type="text" id="documento" name="documento" placeholder="Documento" required>
+            </div>
+            <div>
+                <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad" required>
+            </div>
+            <div>
+                <input type="text" id="direccion" name="direccion" placeholder="Direccion" required>
+            </div>
+            <div>
+                <input type="text" id="celular" name="celular" placeholder="Celular" required>
+            </div>
+            <div>
+                <input type="email" id="email" name="email" placeholder="Correo" required>
+            </div>
+
+            <div>
+                <input type="email" id="confirmar_email" name="confirmar_email" placeholder="Confirmar correo" required>
+            </div>
+
+            <div>
+                <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
+            </div>
+
+            <div>
+                <input type="password" id="confirmar_contraseña" name="confirmar_contraseña" placeholder="Confirmar contraseña" required>
+            </div>
+
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
+    <ul id="ClienteList"></ul>
+    <script src="registrocliente.js"></script>
+   
+
+</body>
+</html>

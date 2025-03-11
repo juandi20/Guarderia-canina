@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Empleado</title>
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="contenedor">
+        <form id="empleadoForm">
+            <h1>Registro empleado</h1>
+            
+            <div>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+            </div>
+
+            <div>
+                <input type="text" id="documento" name="documento" placeholder="Documento" required>
+            </div>
+
+            <div>
+                <input type="email" id="email" name="email" placeholder="Correo" required>
+            </div>
+
+            <div>
+                <input type="email" id="confirmar_email" name="confirmar_email" placeholder="Confirmar correo" required>
+            </div>
+
+            <div>
+                <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
+            </div>
+
+            <div>
+                <input type="password" id="confirmar_contraseña" name="confirmar_contraseña" placeholder="Confirmar contraseña" required>
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <ul id="empleadoList"></ul>
+
+</body>
+</html>
+
