@@ -2,7 +2,7 @@ from rest_framework import serializers
 from .models import Cliente
 from django.contrib.auth.hashers import make_password
 
-class ClienteRegistroSerializer(serializers.ModelSerializer):
+class ClienteSerializer(serializers.ModelSerializer):
     confirmar_contrasena = serializers.CharField(write_only=True)
 
     class Meta:
