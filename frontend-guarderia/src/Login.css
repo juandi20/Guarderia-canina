@@ -1,0 +1,79 @@
+/* Fondo verde para toda la página */
+body {
+    background-color: #80CBC4;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilos del contenedor del login */
+  .login-container {
+    max-width: 400px;
+    margin: 100px auto; /* Centrado vertical y horizontal */
+    padding: 20px;
+    border: 2px solid #3D8D7A;
+    border-radius: 5px;
+    background-color: #B4EBE6; /* Azul */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0c0c0c;
+  }
+  
+  .login-form input[type="email"],
+  .login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+  }
+  
+  .login-form button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #FBF8EF;
+    color: rgb(0, 0, 0);
+    border: 1px solid #000000; /* Borde visible siempre */
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: border 0.3s ease; /* Transición suave para el borde */
+  }
+  
+  .login-form button[type="submit"]:hover {
+    background-color: #FBF8EF;
+    border: 1px solid #000000; /* Borde más grueso al pasar el mouse */
+  }
+  
+  .login-error {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .login-links {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .login-links a {
+    text-decoration: none;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+  }
+  
+  .login-links a:first-child {
+    color: #000000;
+  }
+  
+  .login-links a:last-child {
+    color: #000000;
+  }
+  
