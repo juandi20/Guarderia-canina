@@ -30,22 +30,27 @@ function Registro() {
     e.preventDefault();
     setError('');
     setMensaje('');
-
+  
     if (formData.contrasena_hash !== formData.confirmar_contrasena) {
       setError('Error: Las contraseñas no coinciden');
       return;
     }
-
+  
     try {
-      const { confirmar_contrasena, ...dataToSend } = formData;
-      await axios.post('http://localhost:8000/api/registro-cliente/', dataToSend);
+      const { confirmar_contrasena, ...rest } = formData;
+      const dataToSend = {
+        ...rest,
+        documento: parseInt(formData.documento),  // 👈 convertir a número
+      };
+      
+      await axios.post('http://localhost:8000/api/registro-cliente/', formData);
       setMensaje('Cliente registrado exitosamente');
-      setTimeout(() => navigate('/'), 2000); // Espera 2s antes de redirigir
+      setTimeout(() => navigate('/'), 2000);
     } catch (err) {
-      console.error(err);
+      console.error(err.response?.data); // 👈 esto mostrará qué campo falló
       setError('Error al registrar. Intenta nuevamente.');
     }
-  };
+  };  
 
   return (
     <div className="pageWrapper">
