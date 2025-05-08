@@ -12,22 +12,27 @@ function Login({ onLoginSuccess }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
-
+  
     try {
-      const response = await axios.post('http://localhost:8000/api/login-cliente/', {
+      const response = await axios.post('http://localhost:8000/login/', {
         correo_electronico: correo,
         contrasena: contrasena
       });
-
-      localStorage.setItem('cliente', JSON.stringify(response.data));
+  
+      localStorage.setItem('usuario', JSON.stringify(response.data));
       if (onLoginSuccess) onLoginSuccess(response.data);
-
-      navigate('/dashboard-cliente');
+  
+      if (response.data.rol === 'cliente') {
+        navigate('/dashboard-cliente');
+      } else if (response.data.rol === 'empleado') {
+        navigate('/dashboard-empleado');
+      }
     } catch (err) {
       console.error(err);
       setError('Correo o contraseña incorrectos');
     }
   };
+  
 
   return (
     <div className="login-container">

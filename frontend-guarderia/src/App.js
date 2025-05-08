@@ -6,6 +6,7 @@ import Login from './Login';
 import DashboardCliente from './DashboardCliente';
 import Registro from './RegistroCliente'; 
 import OlvideContrasena from './OlvideContrasena'; 
+import DashboardEmpleado from './DashboardEmpleado';
 
 function App() {
   const [cliente, setCliente] = useState(null);
@@ -26,6 +27,7 @@ function App() {
         <Route path="/dashboard" element={<DashboardCliente cliente={cliente} onLogout={() => setCliente(null)} />} />
         <Route path="/registro" element={<Registro />} />
         <Route path="/olvide-contrasena" element={<OlvideContrasena />} />
+        <Route path="/dashboard-empleado" element={<DashboardEmpleado />} />
       </Routes>
     </Router>
   );

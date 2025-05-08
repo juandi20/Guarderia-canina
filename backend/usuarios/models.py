@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.hashers import make_password
+
 
 # -----------------------
 # Modelo Cliente
@@ -23,7 +25,12 @@ class Empleado(models.Model):
     documento = models.BigIntegerField()
     celular = models.CharField(max_length=20)
     correo_electronico = models.EmailField(unique=True)
-    contrasena_hash = models.CharField(max_length=255)  # Contraseña en hash
+    contrasena_hash = models.CharField(max_length=255)
+
+    def save(self, *args, **kwargs):
+        if not self.pk or not Empleado.objects.filter(pk=self.pk, contrasena_hash=self.contrasena_hash).exists():
+            self.contrasena_hash = make_password(self.contrasena_hash)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.nombre
