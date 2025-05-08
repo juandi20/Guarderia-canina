@@ -12,16 +12,16 @@ function Login({ onLoginSuccess }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
-  
+
     try {
       const response = await axios.post('http://localhost:8000/login/', {
         correo_electronico: correo,
         contrasena: contrasena
       });
-  
+
       localStorage.setItem('usuario', JSON.stringify(response.data));
       if (onLoginSuccess) onLoginSuccess(response.data);
-  
+
       if (response.data.rol === 'cliente') {
         navigate('/dashboard-cliente');
       } else if (response.data.rol === 'empleado') {
@@ -32,40 +32,53 @@ function Login({ onLoginSuccess }) {
       setError('Correo o contraseña incorrectos');
     }
   };
-  
+
+  const handleLogoClick = () => {
+    navigate('/');  // Redirige a la página principal
+  };
 
   return (
-    <div className="login-container">
-      <h2 className="login-title">Iniciar Sesión Cliente</h2>
-      <form className='login-form' onSubmit={handleSubmit}>
-        <div>
-          <label>Correo electrónico:</label>
-          <input
-            type="email"
-            value={correo}
-            onChange={(e) => setCorreo(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Contraseña:</label>
-          <input
-            type="password"
-            value={contrasena}
-            onChange={(e) => setContrasena(e.target.value)}
-            required
-          />
-        </div>
-        {error && <p className='login-error'>{error}</p>}
-        <button type="submit">Iniciar sesión</button>
-      </form>
+    <div className="login-page">
+      
+      {/* LOGO al lado izquierdo */}
+      <div className="logo-section" onClick={handleLogoClick}>
+        <img src="/img/logo-inicio.png" alt="Logo" className="logo-img" />
+      </div>
 
-      <div className="login-links">
-        <Link to="/olvide-contrasena">¿Olvidaste tu contraseña?</Link><br />
-        <Link to="/registro">¿No tienes cuenta? Crear cuenta</Link>
+      {/* FORMULARIO al lado derecho */}
+      <div className="login-container">
+        <h2 className="login-title">Iniciar Sesión</h2>
+        <form className='login-form' onSubmit={handleSubmit}>
+          <div>
+            <input
+              type="email"
+              placeholder="Correo electrónico"
+              value={correo}
+              onChange={(e) => setCorreo(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="password"
+               placeholder="Contraseña"
+              value={contrasena}
+              onChange={(e) => setContrasena(e.target.value)}
+              required
+            />
+          </div>
+          {error && <p className='login-error'>{error}</p>}
+          <button type="submit">Iniciar sesión</button>
+        </form>
+
+        <div className="login-links">
+          <Link to="/olvide-contrasena">¿Olvidaste tu contraseña?</Link><br />
+          <Link to="/registro">¿No tienes cuenta? Crear cuenta</Link>
+        </div>
       </div>
     </div>
   );
 }
 
 export default Login;
+
