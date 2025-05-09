@@ -12,7 +12,7 @@ function Registro() {
     celular: '',
     correo_electronico: '',
     contrasena_hash: '',
-    confirmar_contrasena: '', // Agregado para validación
+    confirmar_contrasena: '',
   });
 
   const [mensaje, setMensaje] = useState('');
@@ -30,30 +30,51 @@ function Registro() {
     e.preventDefault();
     setError('');
     setMensaje('');
-  
+
     if (formData.contrasena_hash !== formData.confirmar_contrasena) {
       setError('Error: Las contraseñas no coinciden');
       return;
     }
-  
+
     try {
-      const { confirmar_contrasena, ...rest } = formData;
+      // Enviar todos los campos, incluyendo confirmar_contrasena
       const dataToSend = {
-        ...rest,
-        documento: parseInt(formData.documento),  // 👈 convertir a número
+        ...formData,
+        documento: parseInt(formData.documento),
       };
-      
-      await axios.post('http://localhost:8000/api/registro-cliente/', formData);
+
+      console.log('Datos enviados al servidor:', dataToSend);
+
+      await axios.post('http://localhost:8000/api/registro-cliente/', dataToSend);
+
       setMensaje('Cliente registrado exitosamente');
-      setTimeout(() => navigate('/'), 2000);
+      setTimeout(() => navigate('/login'), 2000);
+
     } catch (err) {
-      console.error(err.response?.data); // 👈 esto mostrará qué campo falló
-      setError('Error al registrar. Intenta nuevamente.');
+      console.error('Error en el registro:', err);
+
+      if (err.response) {
+        console.error('Detalles del error del servidor:', err.response.data);
+        setError(`Error al registrar: ${JSON.stringify(err.response.data)}`);
+      } else {
+        setError('Error al registrar. Intenta nuevamente.');
+      }
     }
-  };  
+  };
+
+  const handleLogoClick = () => {
+    navigate('/');
+  };
 
   return (
     <div className="pageWrapper">
+
+      {/* LOGO en la esquina */}
+      <div className="logo-section" onClick={handleLogoClick}>
+        <img src="/img/logo-inicio.png" alt="Logo" className="logo-img" />
+      </div>
+
+      {/* FORMULARIO centrado */}
       <div className="container">
         <h2 className="title">Registrar Cliente</h2>
         <form onSubmit={handleSubmit} className="form">
@@ -76,3 +97,5 @@ function Registro() {
 }
 
 export default Registro;
+
+
