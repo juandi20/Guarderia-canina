@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
-import './Login.css';  // Asegúrate de que la ruta sea correcta
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import './Login.css';
 
 function Login({ onLoginSuccess }) {
   const [correo, setCorreo] = useState('');
   const [contrasena, setContrasena] = useState('');
   const [error, setError] = useState('');
+  const [mostrarContrasena, setMostrarContrasena] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -34,18 +37,15 @@ function Login({ onLoginSuccess }) {
   };
 
   const handleLogoClick = () => {
-    navigate('/');  // Redirige a la página principal
+    navigate('/');
   };
 
   return (
     <div className="login-page">
-      
-      {/* LOGO al lado izquierdo */}
-      <div className="logo-section" onClick={handleLogoClick}>
+      <div className="logo-container" onClick={handleLogoClick}>
         <img src="/img/logo-inicio.png" alt="Logo" className="logo-img" />
       </div>
 
-      {/* FORMULARIO al lado derecho */}
       <div className="login-container">
         <h2 className="login-title">Iniciar Sesión</h2>
         <form className='login-form' onSubmit={handleSubmit}>
@@ -58,22 +58,32 @@ function Login({ onLoginSuccess }) {
               required
             />
           </div>
-          <div>
+
+          <div className="password-container">
             <input
-              type="password"
-               placeholder="Contraseña"
+              type={mostrarContrasena ? 'text' : 'password'}
+              placeholder="Contraseña"
               value={contrasena}
               onChange={(e) => setContrasena(e.target.value)}
               required
             />
+            
+            <FontAwesomeIcon
+              icon={mostrarContrasena ? faEye : faEyeSlash}
+              className="eye-icon"
+              onClick={() => setMostrarContrasena(!mostrarContrasena)}
+              title={mostrarContrasena ? "Ocultar contraseña" : "Mostrar contraseña"}
+            />  
+
           </div>
+
           {error && <p className='login-error'>{error}</p>}
           <button type="submit">Iniciar sesión</button>
         </form>
 
         <div className="login-links">
           <Link to="/olvide-contrasena">¿Olvidaste tu contraseña?</Link><br />
-          <Link to="/registro">¿No tienes cuenta? Crear cuenta</Link>
+          <Link to="/registro">Crear cuenta nueva</Link>
         </div>
       </div>
     </div>
@@ -81,4 +91,7 @@ function Login({ onLoginSuccess }) {
 }
 
 export default Login;
+
+
+
 

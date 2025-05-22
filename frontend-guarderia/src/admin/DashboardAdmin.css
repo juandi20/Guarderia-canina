@@ -1,0 +1,75 @@
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #80CBC4; /* verde clarito */
+  color: black;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+.sidebar-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.sidebar-button {
+  background-color: transparent;
+  border: none;
+  color: black;
+  padding: 12px 20px;
+  margin-bottom: 15px;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-button:hover {
+  background-color: #FBF8EF; /* blanco clarito al hover */
+}
+
+/* Contenedor principal del dashboard */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Área principal de contenido */
+.dashboard-main {
+  flex: 1;
+  padding: 30px;
+  background-color: #f3f4f6; /*  claro */
+  overflow-y: auto;
+}
+
+/* Texto de bienvenida */
+.welcome-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logout-button {
+  margin-top: auto;
+  margin-bottom: 10px;
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center; /*  Centra solo este botón */
+}
+
+
+.logout-button:hover {
+  background-color: #c0392b;
+}
+

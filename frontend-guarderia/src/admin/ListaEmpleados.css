@@ -1,0 +1,46 @@
+.contenedor-empleados {
+  padding: 20px;
+}
+
+.titulo-empleados {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.tarjetas-empleados {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.tarjeta-empleado {
+  background-color: #f4f4f4;
+  padding: 15px;
+  min-width: 250px;
+  border-radius: 8px;
+  border: 2px solid #3D8D7A;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  flex: 0 0 auto;
+}
+
+.tarjeta-empleado h3 {
+  margin-top: 0;
+}
+
+.btn-eliminar {
+  margin-top: 10px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-eliminar:hover {
+  background-color: #c0392b;
+}

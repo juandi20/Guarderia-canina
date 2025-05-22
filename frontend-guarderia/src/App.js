@@ -8,6 +8,9 @@ import Registro from './RegistroCliente';
 import OlvideContrasena from './OlvideContrasena'; 
 import DashboardEmpleado from './DashboardEmpleado';
 
+// IMPORTA TU DASHBOARD ADMIN
+import DashboardAdmin from './admin/DashboardAdmin';  // Ajusta la ruta según donde esté tu archivo
+
 function App() {
   const [cliente, setCliente] = useState(null);
 
@@ -28,12 +31,16 @@ function App() {
         <Route path="/registro" element={<Registro />} />
         <Route path="/olvide-contrasena" element={<OlvideContrasena />} />
         <Route path="/dashboard-empleado" element={<DashboardEmpleado />} />
+        {/* RUTA NUEVA PARA DASHBOARD ADMIN */}
+        <Route path="/dashboard-admin" element={<DashboardAdmin />} />
       </Routes>
     </Router>
   );
 }
 
 export default App;
+
+
 
         
 

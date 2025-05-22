@@ -26,7 +26,7 @@ function Index() {
 
       <section className="seccion-bienvenida">
         <div className="overlay">
-          <img src="/img/fondo-inicio.jpg" alt="" />
+          <img src="/img/fondo-inicio.jpg" alt="Fondo de bienvenida a Paraíso Canino" />
         </div>
         <div className="texto-bienvenida">
           <h1>¡Bienvenido a Paraíso Canino!</h1>
@@ -34,24 +34,88 @@ function Index() {
         </div>
       </section>
 
-      {/* Sección Nosotros */}
-      <section className="seccion-info" id="nosotros">
-        <div className="titulo-info">
-          <h1>Paraiso Canino: Un Hogar Seguro y Divertido para tu Mascota</h1>
-          <p>Conoce un poco de lo que te podemos ofrecer en paraíso canino.</p>
-        </div>
-        {[1, 2].map((grupo, i) => (
-          <div key={i} className={i === 0 ? "contenedor-superior-info" : "contenedor-inferior-info"}>
-            {[...Array(3)].map((_, idx) => (
-              <div key={idx}>
-                <img src="/img/huella.png" alt="Huella" />
-                <h2>Huella</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit...</p>
-              </div>
-            ))}
-          </div>
-        ))}
-      </section>
+   
+      {/* SECCIÓN NOSOTROS - CON DATOS DEFINIDOS*/}
+      
+      {(function() { 
+        //Datos para las secciones
+        const serviciosNosotrosData = [
+          {
+            id: 'nosotros-juegos',
+            imgSrc: '/img/huella.png',
+            titulo: 'Juegos Supervisados',
+            texto: 'Amplias zonas seguras donde tu perro socializa y juega bajo nuestra atenta mirada profesional y cariñosa.'
+          },
+          {
+            id: 'nosotros-descanso',
+            imgSrc: '/img/huella.png',
+            titulo: 'Zonas de Descanso',
+            texto: 'Contamos con los espacios mas comodos, tranquilos , limpios y seguros para tu mascota, permtiendo sueños reparadores para despues despertar con energia.'
+          },
+          {
+            id: 'nosotros-cuidado',
+            imgSrc: '/img/huella.png',
+            titulo: 'Cuidado Profesional',
+            texto: 'Personal amante de los perros,capacitado para brindar atención y cariño que cada mascota necesita, velando por su bienestar.'
+          },
+          {
+            id: 'nosotros-higiene',
+            imgSrc: '/img/huella.png',
+            titulo: 'Higiene Constante',
+            texto: 'Mantenemos nuestras instalaciones impecablemente limpias y desinfectadas para la salud y seguridad de todos.'
+          },
+          {
+            id: 'nosotros-vacunacion',
+            imgSrc: '/img/huella.png',
+            titulo: 'Carnet vacunas',
+            texto: 'Todos nuestros huéspedes deben presentar su carnet de vacunación al momento de registrarse para su estadía.'
+          },
+          {
+            id: 'nosotros-alimentacion',
+            imgSrc: '/img/huella.png',
+            titulo: 'Horarios de Comida',
+            texto: 'Respetamos las rutinas. Puedes traer su comida y nos aseguraremos de seguir sus horarios específicos.'
+          }
+        ];
+
+        // Dividimos los datos en dos grupos para las dos filas
+        const filaSuperiorNosotros = serviciosNosotrosData.slice(0, 3);
+        const filaInferiorNosotros = serviciosNosotrosData.slice(3, 6);
+
+        // Retornamos el JSX de la sección
+        return (
+          <section className="seccion-info" id="nosotros">
+            <div className="titulo-info">
+              <h1>Paraiso Canino: Un Hogar Seguro y Divertido para tu Mascota</h1>
+              <p>Conoce un poco de lo que te podemos ofrecer en paraíso canino.</p>
+            </div>
+
+            <div className="contenedor-superior-info">
+              {filaSuperiorNosotros.map((servicio) => (
+                <div key={servicio.id} className="item-servicio-nosotros">
+                  <img src={servicio.imgSrc} alt={servicio.titulo} />
+                  <h2>{servicio.titulo}</h2>
+                  <p>{servicio.texto}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="contenedor-inferior-info">
+              {filaInferiorNosotros.map((servicio) => (
+                <div key={servicio.id} className="item-servicio-nosotros">
+                  <img src={servicio.imgSrc} alt={servicio.titulo} />
+                  <h2>{servicio.titulo}</h2>
+                  <p>{servicio.texto}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        );
+      })()}
+   
+      {/* FIN DE LA SECCIÓN NOSOTROS*/}
+     
+
 
       {/* Sección Planes */}
       <section className="contenedor-planes" id="planes">
@@ -67,8 +131,8 @@ function Index() {
             <h3>Tarifa de {plan.titulo}</h3>
             <p>Texto de ejemplo para el plan <img src="/img/huellitas.png" alt="huellas" /></p>
             <div className="cont-imagenes">
-              <img src={`/img/${plan.img1}`} alt="" />
-              <img src={`/img/${plan.img2}`} alt="" />
+              <img src={`/img/${plan.img1}`} alt={`Tarifa ${plan.titulo} imagen 1`} />
+              <img src={`/img/${plan.img2}`} alt={`Tarifa ${plan.titulo} imagen 2`} />
               <div className="boton-reserva">
                 <button onClick={() => navigate('/login')}>Reserva ya!</button>
               </div>
@@ -77,10 +141,10 @@ function Index() {
         ))}
       </section>
 
-      {/* Contacto */}
+      {/*seccion contacto*/}
       <section className="contacto" id="contacto">
         <div className="contenedor-izq">
-          <img src="/img/logo-inicio.png" alt="logo" className="logo-paraiso" />
+          <img src="/img/logo-inicio.png" alt="logo paraiso canino" className="logo-paraiso" />
           <div className="info-izq">
             <h2>Contáctanos</h2>
             <p><strong>Dirección:</strong> Calle 8 #4b:10 Pereira, Risaralda</p>
@@ -96,20 +160,20 @@ function Index() {
         </div>
         <div className="contenedor-der">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18..."
-            width="600"
-            height="450"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.160480781141!2d-75.6981786857378!3d4.81508294205706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38874b76a96107%3A0x73538535b02fc06a!2sCl.%208%20%234b-10%2C%20Pereira%2C%20Risaralda!5e0!3m2!1ses-419!2sco!4v1670000000000!5m2!1ses-419!2sco" // Ejemplo de URL, reemplaza con tu mapa real
+            width="100%"
+            height="350"
             style={{ border: 0 }}
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Ubicación"
+            title="Ubicación Paraíso Canino"
           ></iframe>
         </div>
       </section>
 
       <footer className="footer">
-        <p>&copy; 2025 Paraíso Canino.</p>
+        <p>© 2025 Paraíso Canino. Todos los derechos reservados.</p>
       </footer>
     </div>
   );
